@@ -1,3 +1,4 @@
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import img1 from '../../assets/images/banner/1.jpg';
 import img2 from '../../assets/images/banner/2.jpg';
 import img3 from '../../assets/images/banner/3.jpg';
@@ -16,14 +17,14 @@ const Banner = () => {
            <h2 className="text-6xl font-extrabold ">Affordable Price For Car Servicing</h2>
             <p className='text-gray-400 font-bold my-4'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
             <div className="flex space-x-3">
-            <button className="btn">Discover More</button>
-<button className="btn btn-outline ">Latest Project</button>
+            <button className="btn outline-0 bg-orange-800">Discover More</button>
+<button className="btn ">Latest Project</button>
             </div>
            </div>
           </div>
           <div className="absolute flex justify-end gap-5 transform -translate-y-1/2 left-5 right-5 bottom-1">
-            <a href="#slide4" className="btn btn-circle">❮</a> 
-            <a href="#slide2" className="btn btn-circle">❯</a>
+            <a href="#slide4" className="btn btn-circle"><FaArrowLeft /></a> 
+            <a href="#slide2" className="btn btn-circle"><FaArrowRight /></a>
           </div>
         </div> 
         <div id="slide2" className="carousel-item relative w-full">
@@ -39,8 +40,8 @@ const Banner = () => {
            </div>
           </div>
           <div className="absolute flex justify-end gap-5 transform -translate-y-1/2 left-5 right-5 bottom-1">
-            <a href="#slide1" className="btn btn-circle">❮</a> 
-            <a href="#slide3" className="btn btn-circle">❯</a>
+            <a href="#slide1" className="btn btn-circle"><FaArrowLeft /></a> 
+            <a href="#slide3" className="btn btn-circle"><FaArrowRight /></a>
           </div>
         </div> 
         <div id="slide3" className="carousel-item relative w-full">
@@ -56,8 +57,8 @@ const Banner = () => {
            </div>
           </div>
           <div className="absolute flex justify-end gap-5 transform -translate-y-1/2 left-5 right-5 bottom-1">
-            <a href="#slide2" className="btn btn-circle">❮</a> 
-            <a href="#slide4" className="btn btn-circle">❯</a>
+            <a href="#slide2" className="btn btn-circle"><FaArrowLeft /></a> 
+            <a href="#slide4" className="btn btn-circle"><FaArrowRight /></a>
           </div>
         </div> 
         <div id="slide4" className="carousel-item relative w-full">
@@ -73,8 +74,8 @@ const Banner = () => {
            </div>
           </div>
           <div className="absolute flex justify-end gap-5 transform -translate-y-1/2 left-5 right-5 bottom-1">
-            <a href="#slide3" className="btn btn-circle">❮</a> 
-            <a href="#slide5" className="btn btn-circle">❯</a>
+            <a href="#slide3" className="btn btn-circle"><FaArrowLeft /></a> 
+            <a href="#slide5" className="btn btn-circle"><FaArrowRight /></a>
           </div>
         </div>
         <div id="slide5" className="carousel-item relative w-full">
@@ -90,8 +91,8 @@ const Banner = () => {
            </div>
           </div>
           <div className="absolute flex justify-end gap-5 transform -translate-y-1/2 left-5 right-5 bottom-1">
-            <a href="#slide4" className="btn btn-circle">❮</a> 
-            <a href="#slide6" className="btn btn-circle">❯</a>
+            <a href="#slide4" className="btn btn-circle"><FaArrowLeft /></a> 
+            <a href="#slide6" className="btn btn-circle"><FaArrowRight /></a>
           </div>
         </div>
         <div id="slide6" className="carousel-item relative w-full">
@@ -107,8 +108,8 @@ const Banner = () => {
            </div>
           </div>
           <div className="absolute flex justify-end gap-5 transform -translate-y-1/2 left-5 right-5 bottom-1">
-            <a href="#slide5" className="btn btn-circle">❮</a> 
-            <a href="#slide1" className="btn btn-circle">❯</a>
+            <a href="#slide5" className="btn btn-circle"><FaArrowLeft /></a> 
+            <a href="#slide1" className="btn btn-circle"><FaArrowRight /></a>
           </div>
         </div>
       </div>

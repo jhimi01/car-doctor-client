@@ -32,7 +32,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-        <button style={{textTransform: 'capitalize'}} className="btn ">Appointment</button>
+        <button style={{textTransform: 'capitalize'}} className="btn bg-orange-800">Appointment</button>
         </div>
       </div>
     );
