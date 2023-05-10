@@ -8,6 +8,8 @@ import "./index.css";
 import Main from './Layout/Main.jsx';
 import Home from './pages/Homepage/Home';
 import Login from './pages/Login';
+import SingUp from './pages/SingUp';
+import AuthProvider from './providers/AuthProvider';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,9 @@ const router = createBrowserRouter([
       },{
         path: '/login',
         element: <Login></Login>
+      },{
+        path: '/register',
+        element: <SingUp></SingUp>
       }
     ]
   },
@@ -28,7 +33,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
  <div className='max-w-6xl mx-auto'>
    <React.StrictMode>
-    <RouterProvider router={router} />
+   <AuthProvider>
+   <RouterProvider router={router} />
+   </AuthProvider>
   </React.StrictMode>
  </div>
 )
