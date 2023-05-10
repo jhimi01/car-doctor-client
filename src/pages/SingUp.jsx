@@ -1,13 +1,28 @@
 import { Link } from 'react-router-dom';
 import login from '../assets/images/login/login.svg';
+import { useContext } from 'react';
+import { AuthContext } from '../providers/AuthProvider';
 const SingUp = () => {
+
+    const{ createUser } = useContext(AuthContext);
 
     const handleregister =(e)=>{
         e.preventDefault();
         const form = e.target;
+        // const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+
+
+        createUser(email, password)
+        .then(result => {
+            const user = result.user;
+            console.log(user)
+        })
+        .catch(error => console.log(error))
+
+
          }
 
     return (
@@ -37,7 +52,7 @@ const SingUp = () => {
                 <label className="label">
                   <span className="label-text">Confirm Password</span>
                 </label>
-                <input type="text" placeholder="password" name='password' className="input input-bordered" />
+                <input type="password" placeholder="password" name='password' className="input input-bordered" />
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                 </label>
