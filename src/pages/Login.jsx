@@ -2,10 +2,12 @@ import { Link } from 'react-router-dom';
 import login from '../assets/images/login/login.svg';
 import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
+import { FaGoogle } from 'react-icons/fa';
+
 
 const Login = () => {
 
-    const {signIn} = useContext(AuthContext);
+    const {signIn, createUserGoogle} = useContext(AuthContext);
 
     const handlelogin =(e)=>{
    e.preventDefault();
@@ -22,6 +24,18 @@ const Login = () => {
     console.log(err.message)
    });
     }
+
+    const handleGoogleSingin = (e)=>{
+      e.preventDefault();
+
+      createUserGoogle()
+      .then(result => {
+        const loggengogle = result.user;
+        console.log(loggengogle)
+      }).catch(error => console.log(error.message))
+
+     }
+
 
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -44,7 +58,7 @@ const Login = () => {
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input type="text" placeholder="password" name='password' className="input input-bordered" />
+                <input type="password" placeholder="password" name='password' className="input input-bordered" />
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                 </label>
@@ -52,7 +66,12 @@ const Login = () => {
               <div className="form-control mt-6">
                 <input className="btn btn-primary" type="submit" value='login' />
               </div>
-          </form>
+          </form> 
+          <div className="divider">OR</div>
+          <button onClick={handleGoogleSingin} className="btn btn-primary">
+          Sign in with google
+          <FaGoogle className='ml-2'/>
+          </button>
           <p>New to here? <Link className='text-orange-800 underline' to='/register'>signup</Link></p>
             </div>
           </div>

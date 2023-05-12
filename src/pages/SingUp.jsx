@@ -2,9 +2,13 @@ import { Link } from 'react-router-dom';
 import login from '../assets/images/login/login.svg';
 import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
+import { FaGoogle } from "react-icons/fa";
+
+
+
 const SingUp = () => {
 
-    const{ createUser } = useContext(AuthContext);
+  const { createUser, createUserGoogle } = useContext(AuthContext);
 
     const handleregister =(e)=>{
         e.preventDefault();
@@ -19,9 +23,22 @@ const SingUp = () => {
         .then(result => {
             const user = result.user;
             console.log(user)
+            form.reset();
         })
         .catch(error => console.log(error))
+         }
 
+
+
+
+         const handleGoogleSingin = (e)=>{
+          e.preventDefault();
+
+          createUserGoogle()
+          .then(result => {
+            const loggengogle = result.user;
+            console.log(loggengogle)
+          }).catch(error => console.log(error.message))
 
          }
 
@@ -61,6 +78,13 @@ const SingUp = () => {
                 <input className="btn btn-primary" type="submit" value='SignUp' />
               </div>
           </form>
+          <div className="divider">OR</div>
+          <button onClick={handleGoogleSingin} className="btn btn-primary">
+          Sign in with google
+          <FaGoogle className='ml-2'/>
+          </button>
+
+          {/* <input className="btn btn-primary" type="submit" value='Sign in with github' /> */}
           <p>New to here? <Link className='text-orange-800 underline' to='/login'>login</Link></p>
             </div>
           </div>
