@@ -9,7 +9,9 @@ const Navbar = () => {
 
   const hsndleLogOut =()=>{
     lgoOut()
-    .then(()=>{})
+    .then(()=>{
+      localStorage.removeItem('car-access-token')
+    })
     .catch((error) => {
         console.log(error)
       // An error happened.
